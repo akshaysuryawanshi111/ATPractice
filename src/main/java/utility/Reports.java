@@ -10,7 +10,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class Reports {
 	static ExtentReports extent;
 	static ExtentTest test;
-	public static ExtentReports generateReports() 
+	public static ExtentReports generateReports() //in @BeforeTest
 	{
 		ExtentSparkReporter htmlReporter = new ExtentSparkReporter("extentReport.html");
 		extent = new ExtentReports();
@@ -22,12 +22,12 @@ public class Reports {
 		return extent;
 	}
 	
-	public static void testName(String name)
+	public static void testName(String name)// in @Test
 	{
 		test=extent.createTest(name);
 	}
 	
-	public static void postExcution(ITestResult result)
+	public static void postExcution(ITestResult result)// in @AfterMethod
 	{
 		
 		if(result.getStatus() == ITestResult.SUCCESS)
@@ -42,7 +42,7 @@ public class Reports {
 		}
 	} 
 	
-	public static void publishReport()
+	public static void publishReport()//i @AfterTest
 	{
 		extent.flush();
 	}

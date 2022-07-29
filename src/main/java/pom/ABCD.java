@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import pojo.ChromeBrowser;
 import utility.Parametrization;
 
-public class ZerodhaWatchlistBuy {
+public class ABCD {
 	WebDriver driver;
 	
 	@BeforeTest
